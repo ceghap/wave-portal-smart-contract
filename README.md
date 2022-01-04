@@ -19,6 +19,24 @@ module.exports = {
 };
 ```
 
+or rename `.env.example` to `.env` and update the content if `.env`. Then refer below to use `dotenv`
+
+```
+...
+require("dotenv").config();
+...
+module.exports = {
+...
+networks: {
+  rinkeby: {
+    url: process.env.ALCHEMY_URL,
+    accounts: [process.env.PRIVATE_KEY],
+  },
+},
+...
+}
+```
+
 ### Get your private key
 
 MetaMask > Network "Rinkeby Test Network" > 3 dot > Account Details > Export Privatge Key
